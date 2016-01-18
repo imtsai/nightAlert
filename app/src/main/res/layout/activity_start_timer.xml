@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#DEB887"
+    tools:context="com.example.testing.nightalert.startTimer">
+    <TextView
+        android:hint="Enter Pin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="00:00:00"
+        android:id="@+id/timer"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        tools:ignore="HardcodedText"
+        android:layout_toStartOf="@+id/police"
+        android:layout_alignRight="@+id/tableLayout"
+        android:layout_alignEnd="@+id/tableLayout"
+        android:textSize="85sp" />
+
+    <ImageButton
+        android:background="@drawable/police"
+        android:onClick="callCops"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:text="call Cops"
+        android:id="@+id/police"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/tableLayout"
+        android:layout_alignEnd="@+id/tableLayout"
+        android:maxHeight="50dp"
+        android:maxWidth="80dp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/timer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:transitionGroup="false"
+        android:id="@+id/tableLayout"
+        android:layout_above="@+id/police">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/fakePin"
+                android:hint="Enter pin"
+                android:layout_above="@+id/police"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_column="0"
+                android:layout_weight="0.65" />
+
+            <Button
+                android:onClick="cancelTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cancel"
+                android:id="@+id/cancel"
+                android:layout_alignBaseline="@+id/fakePin"
+                android:layout_alignBottom="@+id/fakePin"
+                android:layout_toRightOf="@+id/fakePin"
+                android:layout_alignRight="@+id/timer"
+                android:layout_alignEnd="@+id/timer"
+                android:layout_column="2"
+                android:layout_weight="0.35"/>
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>
